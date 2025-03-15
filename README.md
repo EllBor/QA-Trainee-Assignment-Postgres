@@ -1,0 +1,1 @@
+# QA-Trainee-Assignment-Postgres
