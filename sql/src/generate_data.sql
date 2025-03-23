@@ -15,4 +15,5 @@ INSERT INTO Exams (s_id, c_no, score)
 SELECT s.s_id, c.c_no,
        round((random() * 40 + 60)::numeric, 2)  -- генерирует баллы от 60 до 100 с 2 знаками после запятой
 FROM Students s CROSS JOIN Courses c
-WHERE random() < 0.7;
+WHERE random() < 0.7
+ON CONFLICT (s_id, c_no) DO NOTHING;
